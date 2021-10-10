@@ -15,7 +15,7 @@ public class TriangleTest {
 
     @Test
     void calcAreaWithInvalidParameters() {
-        assertThrows(RuntimeException.class, () -> Triangle.calcRightTriangleArea(0, 4));
+        assertThrows(RuntimeException.class, () -> Triangle.calcRightTrianglePerimeter(-1, 4));
     }
 
     @Test
