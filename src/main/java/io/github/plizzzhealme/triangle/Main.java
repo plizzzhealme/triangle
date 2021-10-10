@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static final Scanner INPUT = new Scanner(System.in);
+
     public static void main(String[] args) {
         double leg1;
         double leg2;
@@ -12,44 +14,35 @@ public class Main {
 
         System.out.println("Enter legs length:");
 
-        leg1 = getPositiveDouble();
+        leg1 = getDouble();
         leg2 = getPositiveDouble();
-
-        area = calcTriangleArea(leg1, leg2);
-        perimeter = calcTrianglePerimeter(leg1, leg2);
+        area = Triangle.calcRightTriangleArea(leg1, leg2);
+        perimeter = Triangle.calcRightTrianglePerimeter(leg1, leg2);
 
         System.out.println("P = " + perimeter);
         System.out.println("S = " + area);
     }
 
-    private static double calcTrianglePerimeter(double leg1, double leg2) {
-        return leg1 + leg2 + Math.sqrt(leg1 * leg1 + leg2 * leg2);
-    }
-
-    private static double calcTriangleArea(double leg1, double leg2) {
-        return leg1 * leg2 / 2;
-    }
-
     public static double getDouble() {
-        Scanner in = new Scanner(System.in);
-
-        while (!in.hasNextDouble()) {
-            in.next();
-            System.out.println("Enter a real number");
+        while (!INPUT.hasNextDouble()) {
+            INPUT.next();
+            System.out.println("Enter a real number:");
         }
-        return in.nextDouble();
+
+        return INPUT.nextDouble();
     }
 
     public static double getPositiveDouble() {
-        double d;
+        double userInput;
 
         do {
-            d = getDouble();
+            userInput = getDouble();
 
-            if (d <= 0) {
-                System.out.println("Enter a positive real number");
+            if (userInput <= 0) {
+                System.out.println("Enter a positive real number:");
             }
-        } while (d <= 0);
-        return d;
+        } while (userInput <= 0);
+
+        return userInput;
     }
 }
