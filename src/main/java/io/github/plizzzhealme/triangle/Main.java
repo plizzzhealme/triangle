@@ -14,8 +14,8 @@ public class Main {
 
         System.out.println("Enter legs length:");
 
-        leg1 = -1;
-        leg2 = 4;
+        leg1 = enterPositiveDouble();
+        leg2 = enterPositiveDouble();
         area = Triangle.calcRightTriangleArea(leg1, leg2);
         perimeter = Triangle.calcRightTrianglePerimeter(leg1, leg2);
 
@@ -23,24 +23,15 @@ public class Main {
         System.out.println("S = " + area);
     }
 
-    public static double getDouble() {
-        while (!INPUT.hasNextDouble()) {
-            INPUT.next();
-            System.out.println("Enter a real number:");
-        }
-
-        return INPUT.nextDouble();
-    }
-
-    public static double getPositiveDouble() {
+    public static double enterPositiveDouble() {
         double userInput;
 
         do {
-            userInput = getDouble();
-
-            if (userInput <= 0) {
-                System.out.println("Enter a positive real number:");
+            while (!INPUT.hasNextDouble()) {
+                INPUT.next();
             }
+
+            userInput = INPUT.nextDouble();
         } while (userInput <= 0);
 
         return userInput;
