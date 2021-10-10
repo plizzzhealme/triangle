@@ -14,8 +14,8 @@ public class Main {
 
         System.out.println("Enter legs length:");
 
-        leg1 = getDouble();
-        leg2 = getPositiveDouble();
+        leg1 = -1;
+        leg2 = 4;
         area = Triangle.calcRightTriangleArea(leg1, leg2);
         perimeter = Triangle.calcRightTrianglePerimeter(leg1, leg2);
 

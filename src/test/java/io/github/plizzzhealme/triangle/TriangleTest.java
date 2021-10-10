@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TriangleTest {
+class TriangleTest {
 
     public static final Double DELTA = 1e-13;
 
